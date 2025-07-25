@@ -1,0 +1,223 @@
+.player-seat {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.player-seat.current-turn {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+}
+
+.player-seat.current-user {
+  border-color: #2196f3;
+  background: rgba(33, 150, 243, 0.1);
+}
+
+/* Position seats around the table */
+.seat-bottom {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.seat-bottom-left {
+  bottom: 80px;
+  left: 20px;
+}
+
+.seat-top-left {
+  top: 80px;
+  left: 20px;
+}
+
+.seat-top {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.seat-top-right {
+  top: 80px;
+  right: 20px;
+}
+
+.seat-bottom-right {
+  bottom: 80px;
+  right: 20px;
+}
+
+.dealer-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 25px;
+  height: 25px;
+  background: #ff9800;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.player-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+.player-details {
+  text-align: left;
+}
+
+.player-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-chips {
+  font-size: 12px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.player-bet {
+  font-size: 11px;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.player-cards {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 5px;
+}
+
+.player-status {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-folded {
+  background: #f44336;
+  color: white;
+}
+
+.status-all-in {
+  background: #ff9800;
+  color: white;
+}
+
+.status-current-turn {
+  background: #4caf50;
+  color: white;
+  animation: blink 1s infinite;
+}
+
+.turn-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.pulse-ring {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #4caf50;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .player-seat {
+    min-width: 100px;
+    padding: 8px;
+  }
+  
+  .player-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .player-name {
+    font-size: 12px;
+    max-width: 60px;
+  }
+  
+  .player-chips, .player-bet {
+    font-size: 10px;
+  }
+  
+  /* Adjust seat positions for smaller screens */
+  .seat-bottom-left, .seat-top-left {
+    left: 10px;
+  }
+  
+  .seat-bottom-right, .seat-top-right {
+    right: 10px;
+  }
+}

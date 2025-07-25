@@ -1,0 +1,239 @@
+.betting-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  min-width: 400px;
+}
+
+.betting-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.info-item .label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.info-item .value {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.raise-slider-container {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.raise-slider-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #4caf50;
+  text-align: center;
+}
+
+.raise-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.raise-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.raise-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #666;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.fold-btn {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+  color: white;
+}
+
+.fold-btn:hover {
+  background: linear-gradient(45deg, #d32f2f, #b71c1c);
+}
+
+.check-btn {
+  background: linear-gradient(45deg, #4caf50, #388e3c);
+  color: white;
+}
+
+.check-btn:hover {
+  background: linear-gradient(45deg, #388e3c, #2e7d32);
+}
+
+.call-btn {
+  background: linear-gradient(45deg, #2196f3, #1976d2);
+  color: white;
+}
+
+.call-btn:hover {
+  background: linear-gradient(45deg, #1976d2, #1565c0);
+}
+
+.raise-btn {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+  color: white;
+}
+
+.raise-btn:hover {
+  background: linear-gradient(45deg, #f57c00, #ef6c00);
+}
+
+.raise-btn.confirm-raise {
+  background: linear-gradient(45deg, #4caf50, #388e3c);
+  animation: pulse-green 1s infinite;
+}
+
+.all-in-btn {
+  background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+  color: white;
+}
+
+.all-in-btn:hover {
+  background: linear-gradient(45deg, #7b1fa2, #6a1b9a);
+}
+
+.slider-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.6);
+  }
+  100% {
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .betting-controls {
+    min-width: 320px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+    padding: 15px;
+  }
+  
+  .action-buttons {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .action-btn {
+    padding: 10px 15px;
+    font-size: 12px;
+    min-width: 70px;
+  }
+  
+  .betting-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .info-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
